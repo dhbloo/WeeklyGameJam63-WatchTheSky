@@ -15,10 +15,7 @@ public class LowPolyTerrain : MonoBehaviour {
     public float Offset = -4.0f;
     public float Turbulence = 0.6f;
 
-    MeshFilter meshFilter;
-
     void Awake() {
-        meshFilter = GetComponent<MeshFilter>();
         RebuildMesh();
     }
 
@@ -26,12 +23,10 @@ public class LowPolyTerrain : MonoBehaviour {
         
 	}
 
-    void Update () {
-		
-	}
-
     public void RebuildMesh() {
-        meshFilter.sharedMesh = CreateMesh();
+        Mesh mesh = CreateMesh();
+        GetComponent<MeshFilter>().sharedMesh = mesh;
+        GetComponent<MeshCollider>().sharedMesh = mesh;
     }
 
     Mesh CreateMesh() {
