@@ -8,9 +8,7 @@ To join [WeeklyGameJam63 "Watch The Sky"](https://itch.io/jam/weekly-game-jam-63
 
 ## 游戏规则
 
-3D。
-
-低模。
+3D，第三人称。
 
 游戏分为很多小的关卡。
 
@@ -25,6 +23,8 @@ To join [WeeklyGameJam63 "Watch The Sky"](https://itch.io/jam/weekly-game-jam-63
 石头云朵掉下与士兵接触，士兵会死亡。死亡的士兵与石头之后消失。
 
 ## 美术需求
+
+低模。
 
 低多边形模型。
 
