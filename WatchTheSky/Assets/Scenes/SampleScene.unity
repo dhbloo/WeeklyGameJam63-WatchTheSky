@@ -138,7 +138,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9873407, b: 0.8349056, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -208,8 +208,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4116fab8795ec9b46b768b40923f6c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Length: 10
-  Width: 10
+  Length: 100
+  Width: 100
+  Scale: 0.05
+  HeightScale: 12
+  TurbHeightScale: 0.06
+  Offset: -5.5
+  Turbulence: 0.8
 --- !u!23 &503074948
 MeshRenderer:
   m_ObjectHideFlags: 0
