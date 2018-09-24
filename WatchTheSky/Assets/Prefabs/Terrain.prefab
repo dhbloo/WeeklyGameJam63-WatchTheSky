@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1047505458328474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,7 +91,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047505458328474}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 47d4529432e349a45bf7e54a1344ef81, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -110,10 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4116fab8795ec9b46b768b40923f6c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Length: 100
-  Width: 100
+  Length: 120
+  Width: 120
   Scale: 0.05
-  HeightScale: 12
+  HeightScale: 9
   TurbHeightScale: 0.06
-  Offset: -5.5
+  Offset: -4
   Turbulence: 0.8

@@ -8,10 +8,17 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 1.0f;
 
-    private void Update()
+    Rigidbody rb;
+
+    private void Start() {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void FixedUpdate()
     {
         Vector3 right = camera.transform.right;
         Vector3 forward = Vector3.Cross(Vector3.up, right);
-        transform.position += (-forward * Input.GetAxis("Vertical") + right * Input.GetAxis("Horizontal")) * speed;
+        float vy = rb.velocity.y;
+        rb.velocity = (-forward * Input.GetAxis("Vertical") + right * Input.GetAxis("Horizontal")) * speed + vy * Vector3.up;
     }
 }
