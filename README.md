@@ -1,4 +1,4 @@
-# *GameTitle*
+# DropCloud
 
 To join [WeeklyGameJam63 "Watch The Sky"](https://itch.io/jam/weekly-game-jam-63).
 
@@ -37,13 +37,16 @@ To join [WeeklyGameJam63 "Watch The Sky"](https://itch.io/jam/weekly-game-jam-63
 - [x] 地图四周的山峰
 - [ ] 树
 - [x] 石头
-- [ ] 士兵
+- [x] 士兵
 - [x] 云朵
 
 动画
 
-- [ ] 士兵行走的动画
-- [ ] 士兵用矛向前刺的动画
+- [x] 士兵行走的动画
+    - 0-12    start walk
+    - 12-60   walk loop
+- [x] 士兵盾击动画
+    - 80-92
 
 ## 程序进度
 
