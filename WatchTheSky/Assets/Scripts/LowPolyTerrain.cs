@@ -34,10 +34,11 @@ public class LowPolyTerrain : MonoBehaviour {
         int[] indices;
         GenFlatTerrainVertices(out vertices, out indices);
 
-        Mesh mesh = new Mesh();
-        mesh.name = "Low Poly Terrain";
-        mesh.vertices = vertices;
-        mesh.triangles = indices;
+        Mesh mesh = new Mesh {
+            name = "Low Poly Terrain",
+            vertices = vertices,
+            triangles = indices
+        };
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
 
@@ -70,10 +71,25 @@ public class LowPolyTerrain : MonoBehaviour {
     }
 
     void RegulateTurbField(ref float[,] xr, ref float[,] zr) {
-        for (int x = 0; x < Length; x++)
-            for (int z = 0; z < Width; z++) {
-                xr[x, z] = Mathf.Min(xr[x, z], 1 + xr[x + 1, z]);
-                zr[x, z] = Mathf.Min(zr[x, z], 1 + xr[x, z + 1]);
+        Vector2 o = new Vector2(-2, -2);
+        for (int x = Length - 1; x >= 0; x--)
+            for (int z = Width - 1; z >= 0; z--) {
+                Vector2 a = new Vector2(1 + xr[x, z + 1], 1 + zr[x, z + 1]);
+                Vector2 b = new Vector2(1 + xr[x + 1, z], 1 + zr[x + 1, z]);
+                Vector2 c = new Vector2(xr[x, z], zr[x, z]);
+
+                float sOAB = Vector3.Cross(a - o, b - o).magnitude;
+                float sCAB = Vector3.Cross(a - c, b - c).magnitude;
+
+                if (sOAB * sCAB < 0) {
+                    float k = sCAB / sOAB;
+                    float t = 1 / (1.5f - k);
+
+                    c = o + (c - o) * t;
+
+                    xr[x, z] = c.x;
+                    zr[x, z] = c.y;
+                }
             }
     }
 

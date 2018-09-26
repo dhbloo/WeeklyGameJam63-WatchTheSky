@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public new GameObject camera;
-
-    public float speed = 1.0f;
+    public GameObject CameraObject;
+    public float PlayerSpeed = 1.0f;
 
     Rigidbody rb;
 
@@ -16,9 +15,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 right = camera.transform.right;
-        Vector3 forward = Vector3.Cross(Vector3.up, right);
+        Vector3 right = CameraObject.transform.right;
+        Vector3 forward = Vector3.Cross(Vector3.up, right) * Input.GetAxis("Vertical");
+        right = right * Input.GetAxis("Horizontal");
         float vy = rb.velocity.y;
-        rb.velocity = (-forward * Input.GetAxis("Vertical") + right * Input.GetAxis("Horizontal")) * speed + vy * Vector3.up;
+        rb.velocity = (-forward + right) * PlayerSpeed + vy * Vector3.up;
     }
 }

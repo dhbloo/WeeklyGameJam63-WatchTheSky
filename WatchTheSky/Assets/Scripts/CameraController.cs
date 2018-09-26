@@ -11,6 +11,8 @@ public class CameraController : MonoBehaviour
 
     public float maxElevationAngle = 80.0f;
 
+    public float eyeOffset = 0.6f;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -18,7 +20,7 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        transform.position = player.transform.position;
+        transform.position = player.transform.position + Vector3.up * eyeOffset;
 
         transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * sensitivityLeftRight -
             transform.right * Input.GetAxis("Mouse Y") * sensitivityUpDown, Space.World);
