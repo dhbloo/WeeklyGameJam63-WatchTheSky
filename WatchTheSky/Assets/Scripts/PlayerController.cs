@@ -21,4 +21,16 @@ public class PlayerController : MonoBehaviour
         float vy = rb.velocity.y;
         rb.velocity = (-forward + right) * PlayerSpeed + vy * Vector3.up;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "soldier")
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().EndGame();
+    }
+
+    public void RestartGame()
+    {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().StartGame();
+    }
+
 }

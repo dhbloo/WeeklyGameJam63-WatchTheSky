@@ -11,11 +11,7 @@ public class CameraController : MonoBehaviour
     public float minElevationAngle = -80f;
 
     public float eyeOffset = 0.6f;
-
-    private void Start()
-    {
-        Cursor.visible = false;
-    }
+    
 
     private void Update()
     {
