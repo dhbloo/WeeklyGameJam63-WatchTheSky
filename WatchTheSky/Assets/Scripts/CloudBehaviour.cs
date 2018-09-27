@@ -22,12 +22,15 @@ public class CloudBehaviour : MonoBehaviour {
     bool isDeath;
     float timer;
     public float timeDeath = 3f;
+    Vector3 initialScale;
 
     void Start () {
         movingSpeed = Mathf.Lerp(MovingSpeedMin, MovingSpeedMax, Random.value);
         floating = true;
         lastHighlightTime = float.MinValue;
         isDeath = false;
+        
+        initialScale = transform.localScale;
     }
 	
 	void Update () {
@@ -46,7 +49,7 @@ public class CloudBehaviour : MonoBehaviour {
             else
             {
                 rb.velocity = Vector3.zero;
-                gameObject.transform.localScale = Vector3.one * (timeDeath - timer) / timeDeath;
+                gameObject.transform.localScale = initialScale * (timeDeath - timer) / timeDeath;
             }
         }
     }
