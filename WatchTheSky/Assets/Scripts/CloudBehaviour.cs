@@ -21,7 +21,10 @@ public class CloudBehaviour : MonoBehaviour {
 	void Update () {
         if (floating) {
             Transform t = transform;
-            t.localPosition = t.localPosition + (-t.localPosition).normalized * movingSpeed * Time.deltaTime;
+            Vector3 dir = -t.localPosition;
+            float dist = dir.magnitude * 0.01f;
+            float dynamicScale = 2 * Mathf.Exp(dist) / (1 + Mathf.Exp(dist)) - 1;
+            t.localPosition = t.localPosition + dir.normalized * (movingSpeed * dynamicScale * Time.deltaTime);
         }
     }
 
