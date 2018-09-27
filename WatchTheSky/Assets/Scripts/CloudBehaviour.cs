@@ -7,7 +7,6 @@ public class CloudBehaviour : MonoBehaviour {
     public float MovingSpeedMin = 2.0f;
     public float MovingSpeedMax = 6.0f;
 
-    public float Mass = 20.0f;
     public float InitialSpeed = 4;
 
     Rigidbody rb;
@@ -31,6 +30,7 @@ public class CloudBehaviour : MonoBehaviour {
         isDeath = false;
         
         initialScale = transform.localScale;
+        rb = GetComponent<Rigidbody>();
     }
 	
 	void Update () {
@@ -40,16 +40,31 @@ public class CloudBehaviour : MonoBehaviour {
             float dist = dir.magnitude * 0.01f;
             float dynamicScale = 2 * Mathf.Exp(dist) / (1 + Mathf.Exp(dist)) - 1;
             t.localPosition = t.localPosition + dir.normalized * (movingSpeed * dynamicScale * Time.deltaTime);
+
         }
-         if(isDeath)
-        {
+
+        if (isDeath) {
             timer += Time.deltaTime;
             if (timer >= timeDeath)
                 Destroy(gameObject);
-            else
-            {
+            else {
                 rb.velocity = Vector3.zero;
                 gameObject.transform.localScale = initialScale * (timeDeath - timer) / timeDeath;
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (!gameObject.activeSelf)
+            return;
+
+        GameObject obj = other.gameObject;
+        if (obj.CompareTag("cloud")) {
+            if (obj.GetComponent<CloudBehaviour>().Floating && 
+                obj.transform.localScale.magnitude <= transform.localScale.magnitude) {
+                transform.localScale += obj.transform.localScale * 0.2f;
+                obj.SetActive(false);
+                Destroy(obj);
             }
         }
     }
@@ -57,10 +72,10 @@ public class CloudBehaviour : MonoBehaviour {
     public void Drop() {
         floating = false;
         lastHighlightTime = float.MinValue;
-        rb = gameObject.AddComponent<Rigidbody>();
-        rb.mass = Mass;
+        rb.isKinematic = false;
         rb.velocity = new Vector3(0, -InitialSpeed, 0);
-        transform.localScale *= 2;
+        GetComponent<MeshCollider>().isTrigger = false;
+        transform.localScale *= 1.1f;
     }
 
     public void HighLight() {
@@ -69,9 +84,10 @@ public class CloudBehaviour : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "terrain")
+        if (collision.gameObject.tag == "terrain"
+            && this)
         {
-            rb.velocity = Vector3.zero;
+            rb.velocity *= 0.2f;
             isDeath = true;
             timer = 0;
         }
