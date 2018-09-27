@@ -6,6 +6,8 @@ public class CloudBehaviour : MonoBehaviour {
 
     public Transform Player;
     public Material PetrifactionMat;
+    public AudioClip DropSound;
+    public AudioClip HitSound;
     public float MovingSpeedMin = 2.0f;
     public float MovingSpeedMax = 6.0f;
 
@@ -84,6 +86,8 @@ public class CloudBehaviour : MonoBehaviour {
         initialScale = transform.localScale;
         transform.localScale *= DropScale;
         GetComponent<MeshRenderer>().material = PetrifactionMat;
+        GetComponent<AudioSource>().clip = DropSound;
+        GetComponent<AudioSource>().Play();
     }
 
     public void HighLight() {
@@ -97,6 +101,8 @@ public class CloudBehaviour : MonoBehaviour {
             rb.velocity *= 0.2f;
             isDeath = true;
             timer = 0;
+            GetComponent<AudioSource>().clip = HitSound;
+            GetComponent<AudioSource>().Play();
         }
     }
 }
