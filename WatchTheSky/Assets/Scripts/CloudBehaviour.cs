@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CloudBehaviour : MonoBehaviour {
 
+    public Transform Player;
     public float MovingSpeedMin = 2.0f;
     public float MovingSpeedMax = 6.0f;
 
@@ -28,15 +29,15 @@ public class CloudBehaviour : MonoBehaviour {
         floating = true;
         lastHighlightTime = float.MinValue;
         isDeath = false;
-        
-        initialScale = transform.localScale;
         rb = GetComponent<Rigidbody>();
     }
 	
 	void Update () {
         if (floating) {
             Transform t = transform;
-            Vector3 dir = -t.localPosition;
+            Vector3 dir = Player.position - t.parent.position;
+            dir.y = 0;
+            dir = dir - t.localPosition;
             float dist = dir.magnitude * 0.01f;
             float dynamicScale = 2 * Mathf.Exp(dist) / (1 + Mathf.Exp(dist)) - 1;
             t.localPosition = t.localPosition + dir.normalized * (movingSpeed * dynamicScale * Time.deltaTime);
@@ -52,9 +53,12 @@ public class CloudBehaviour : MonoBehaviour {
                 gameObject.transform.localScale = initialScale * (timeDeath - timer) / timeDeath;
             }
         }
+
+        if (transform.position.y < -32)
+            isDeath = true;
     }
 
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerStay(Collider other) {
         if (!gameObject.activeSelf)
             return;
 
@@ -75,6 +79,7 @@ public class CloudBehaviour : MonoBehaviour {
         rb.isKinematic = false;
         rb.velocity = new Vector3(0, -InitialSpeed, 0);
         GetComponent<MeshCollider>().isTrigger = false;
+        initialScale = transform.localScale;
         transform.localScale *= 1.1f;
     }
 
@@ -84,8 +89,7 @@ public class CloudBehaviour : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "terrain"
-            && this)
+        if (collision.gameObject.tag == "terrain" && this)
         {
             rb.velocity *= 0.2f;
             isDeath = true;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CloudGenerator : MonoBehaviour {
 
+    public Transform Player;
     public GameObject CloudObject;
     public int TargetCloudCount = 15;
     public float GenRadiusMin = 70f;
@@ -48,5 +49,7 @@ public class CloudGenerator : MonoBehaviour {
         GameObject newCloud = Instantiate(CloudObject, transform);
         newCloud.transform.localPosition = spawnPos;
         newCloud.transform.localEulerAngles = new Vector3(0, rndRotateAngle, 0);
+
+        newCloud.GetComponent<CloudBehaviour>().Player = Player;
     }
 }

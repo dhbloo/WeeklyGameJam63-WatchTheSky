@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e5f3c52c1a29c44a50e624fba60261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   MovingSpeedMin: 2
-  MovingSpeedMax: 7
+  MovingSpeedMax: 8
   InitialSpeed: 50
+  timeDeath: 3
