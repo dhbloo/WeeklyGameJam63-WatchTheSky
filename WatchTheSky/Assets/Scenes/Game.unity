@@ -3882,6 +3882,9 @@ MonoBehaviour:
   GameRun: 0
   CanvasStart: {fileID: 2076351725}
   CanvasEnd: {fileID: 1587470887}
+  PP: {fileID: 534669906}
+  PPProfile: {fileID: 11400000, guid: 38e8b9372df0c68419528d4d8982797a, type: 2}
+  PPProfile_Paused: {fileID: 11400000, guid: 2a86300b7318a304f98daa21d807c3b5, type: 2}
 --- !u!4 &1849615690
 Transform:
   m_ObjectHideFlags: 0

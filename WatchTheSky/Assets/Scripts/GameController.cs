@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -11,9 +12,14 @@ public class GameController : MonoBehaviour
     public GameObject CanvasStart;
     public GameObject CanvasEnd;
 
+    public PostProcessingBehaviour PP;
+    public PostProcessingProfile PPProfile;
+    public PostProcessingProfile PPProfile_Paused;
+
     private void Start()
     {
         GameRun = false;
+        PP.profile = PPProfile_Paused;
         Time.timeScale = 0;
     }
 
@@ -36,6 +42,7 @@ public class GameController : MonoBehaviour
         CanvasStart.SetActive(false);
         Time.timeScale = 1;
         Cursor.visible = false;
+        PP.profile = PPProfile;
     }
 
     public void EndGame()
@@ -44,6 +51,7 @@ public class GameController : MonoBehaviour
         CanvasEnd.SetActive(true);
         Time.timeScale = 0;
         Cursor.visible = true;
+        PP.profile = PPProfile_Paused;
     }
 
     public void RestartGame()
