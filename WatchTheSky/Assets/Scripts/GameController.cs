@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Scenes/SampleScene");
+        SceneManager.LoadScene("Scenes/Game");
 
         Time.timeScale = 1;
 
