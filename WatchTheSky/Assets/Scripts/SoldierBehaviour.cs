@@ -11,17 +11,29 @@ public class SoldierBehaviour : MonoBehaviour
     private GameObject Player;
     private Rigidbody rb;
 
+    private bool isDeath;
+    private float timer;
+    private float timeDeath = 1.5f;
+
 
     private void Start()
     {
         canWalk = false;
         Player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
+
+        isDeath = false;
     }
 
     private void Update()
     {
-        if(canWalk)
+        if(isDeath)
+        {
+            timer += Time.deltaTime;
+            if (timer > timeDeath)
+                Destroy(gameObject);
+        }
+        else if(canWalk)
         {
             Vector3 playerpos = Player.transform.position;
             playerpos.y = 0;
@@ -55,6 +67,8 @@ public class SoldierBehaviour : MonoBehaviour
         {
             foreach(BoxCollider boxColl in GetComponents<BoxCollider>())
                 boxColl.enabled = false;
+            isDeath = true;
+            timer = 0;
         }
     }
 }

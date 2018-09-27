@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 621431259}
-  m_IndirectSpecularColor: {r: 0.18050708, g: 0.2259821, b: 0.3070468, a: 1}
+  m_IndirectSpecularColor: {r: 0.18050641, g: 0.2259811, b: 0.30704606, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -733,10 +733,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Soldier: {fileID: 1480635256156130, guid: 019ad09666e35fc46b51e463088a8bb9, type: 2}
   Player: {fileID: 1573859700}
-  MaxCount: 0
+  MaxCount: 25
   GenerateCycleTime: 2
   MaxRadius: 70
-  NoGenInPlayerRadius: 20
+  NoGenInPlayerRadius: 30
 --- !u!4 &500703446
 Transform:
   m_ObjectHideFlags: 0
@@ -3692,7 +3692,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1701054506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 80983268}
@@ -3995,7 +3995,9 @@ MonoBehaviour:
   CloudObject: {fileID: 1699317837527196, guid: 2e7dc8192d3882042995a506c0d6a943,
     type: 2}
   TargetCloudCount: 20
-  GenRadius: 100
+  GenRadiusMin: 70
+  GenRadiusMax: 120
+  GenerateCycleTime: 1
 --- !u!1 &1968302547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100116, guid: 0ec3e49f5e1cf7e44adfda17a5862bee,

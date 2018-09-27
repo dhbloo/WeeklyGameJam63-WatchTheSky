@@ -55,13 +55,14 @@ To join [WeeklyGameJam63 "Watch The Sky"](https://itch.io/jam/weekly-game-jam-63
     - [x] 碰怪死亡
 - [x] 地形生成
 - [x] 敌人生成
-- [ ] 敌人ai
+- [x] 敌人ai
     - [x] 移动
-    - [ ] 被砸消失
+    - [x] 被砸消失
 - [x] 云朵生成
 - [ ] 云朵ai
     - [x] 移动
     - [ ] 掉落消失
+    - [ ] 选中高亮
 - [x] 游戏流程控制
 
 ## 音乐与音效
