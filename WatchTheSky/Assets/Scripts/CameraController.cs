@@ -6,29 +6,36 @@ using UnityEditor;
 public class CameraController : MonoBehaviour
 {
     public GameObject player;
+    private GameController gameController;
 
     public float maxElevationAngle = 80f;
     public float minElevationAngle = -80f;
 
     public float eyeOffset = 0.6f;
-    
+
+    private void Start()
+    {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+    }
 
     private void Update()
     {
         transform.position = player.transform.position + Vector3.up * eyeOffset;
 
-        float rotationAngleX = Input.GetAxis("Mouse X");
-        float rotationAngleY = Input.GetAxis("Mouse Y");
+        if (gameController.GameRun)
+        {
+            float rotationAngleX = Input.GetAxis("Mouse X");
+            float rotationAngleY = Input.GetAxis("Mouse Y");
 
-        float nowElevationAngle = 90f - Vector3.SignedAngle(Vector3.up, transform.forward, transform.right);
+            float nowElevationAngle = 90f - Vector3.SignedAngle(Vector3.up, transform.forward, transform.right);
 
-        float MaxRotationAngleY = maxElevationAngle - nowElevationAngle;
-        float MinRotationAngleY = minElevationAngle - nowElevationAngle;
+            float MaxRotationAngleY = maxElevationAngle - nowElevationAngle;
+            float MinRotationAngleY = minElevationAngle - nowElevationAngle;
 
-        rotationAngleY = Mathf.Clamp(rotationAngleY, MinRotationAngleY, MaxRotationAngleY);
+            rotationAngleY = Mathf.Clamp(rotationAngleY, MinRotationAngleY, MaxRotationAngleY);
 
-        transform.Rotate(Vector3.up * rotationAngleX - transform.right * rotationAngleY, Space.World);
-
+            transform.Rotate(Vector3.up * rotationAngleX - transform.right * rotationAngleY, Space.World);
+        }
     }
 
 }

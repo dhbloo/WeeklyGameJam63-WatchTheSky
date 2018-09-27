@@ -24,13 +24,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "soldier")
+        if (collision.gameObject.tag == "soldier" || collision.gameObject.tag == "cloud")
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().EndGame();
-    }
-
-    public void RestartGame()
-    {
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().StartGame();
     }
 
 }
