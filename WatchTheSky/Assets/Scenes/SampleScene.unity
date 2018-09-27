@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 621431259}
-  m_IndirectSpecularColor: {r: 0.44686723, g: 0.49674833, b: 0.5749871, a: 1}
+  m_IndirectSpecularColor: {r: 0.18050708, g: 0.2259821, b: 0.3070468, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -506,9 +506,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1573859700}
-  sensitivityLeftRight: 1
-  sensitivityUpDown: 1
   maxElevationAngle: 80
+  minElevationAngle: -80
   eyeOffset: 0.75
 --- !u!108 &621431259 stripped
 Light:
@@ -2083,6 +2082,26 @@ Prefab:
     - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108074906052869206, guid: d0223f77114284b47a0e8b317e71e4dc,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 108104880771543474, guid: d0223f77114284b47a0e8b317e71e4dc,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 108104880771543474, guid: d0223f77114284b47a0e8b317e71e4dc,
+        type: 2}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108074906052869206, guid: d0223f77114284b47a0e8b317e71e4dc,
+        type: 2}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0223f77114284b47a0e8b317e71e4dc, type: 2}
