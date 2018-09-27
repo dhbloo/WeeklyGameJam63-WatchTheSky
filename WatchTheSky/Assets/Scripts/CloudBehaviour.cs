@@ -5,10 +5,12 @@ using UnityEngine;
 public class CloudBehaviour : MonoBehaviour {
 
     public Transform Player;
+    public Material PetrifactionMat;
     public float MovingSpeedMin = 2.0f;
     public float MovingSpeedMax = 6.0f;
 
     public float InitialSpeed = 4;
+    public float DropScale = 1.2f;
 
     Rigidbody rb;
 
@@ -80,7 +82,8 @@ public class CloudBehaviour : MonoBehaviour {
         rb.velocity = new Vector3(0, -InitialSpeed, 0);
         GetComponent<MeshCollider>().isTrigger = false;
         initialScale = transform.localScale;
-        transform.localScale *= 1.1f;
+        transform.localScale *= DropScale;
+        GetComponent<MeshRenderer>().material = PetrifactionMat;
     }
 
     public void HighLight() {
