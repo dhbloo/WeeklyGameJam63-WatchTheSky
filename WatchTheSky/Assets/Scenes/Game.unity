@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 621431259}
-  m_IndirectSpecularColor: {r: 0.18050641, g: 0.2259811, b: 0.30704606, a: 1}
+  m_IndirectSpecularColor: {r: 0.18050708, g: 0.2259821, b: 0.3070468, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -592,7 +592,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2.5, y: 50}
+  m_SizeDelta: {x: 3, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &413807488
 MonoBehaviour:
@@ -733,7 +733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Soldier: {fileID: 1480635256156130, guid: 019ad09666e35fc46b51e463088a8bb9, type: 2}
   Player: {fileID: 1573859700}
-  MaxCount: 30
+  MaxCount: 25
   GenerateCycleTime: 2
   MaxRadius: 70
   NoGenInPlayerRadius: 20
@@ -760,6 +760,7 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669908}
   - component: {fileID: 534669906}
   - component: {fileID: 534669907}
   m_Layer: 0
@@ -856,6 +857,21 @@ MonoBehaviour:
   maxElevationAngle: 80
   minElevationAngle: -80
   eyeOffset: 0.75
+--- !u!114 &534669908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71edded1eb638674f932d9a0709fc533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawMaterial: {fileID: 2100000, guid: 9d63c6b6e5b66ba45b813b1af7555f36, type: 2}
+  HighlightMaterial: {fileID: 2100000, guid: bf86e3ce77e531642b71e23233ada02c, type: 2}
+  GaussianMaterial: {fileID: 2100000, guid: 0564ebe7cc4ff984399249eabb5fd328, type: 2}
+  CloudGroup: {fileID: 1946427727}
 --- !u!108 &621431259 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 108074906052869206, guid: d0223f77114284b47a0e8b317e71e4dc,
@@ -3276,7 +3292,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 2.5}
+  m_SizeDelta: {x: 20, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581493216
 MonoBehaviour:
@@ -3959,8 +3975,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1946427727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 90, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6

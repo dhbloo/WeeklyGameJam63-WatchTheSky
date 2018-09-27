@@ -72,8 +72,13 @@ public class LowPolyTerrain : MonoBehaviour {
 
     void RegulateTurbField(ref float[,] xr, ref float[,] zr) {
         Vector2 o = new Vector2(-2, -2);
-        for (int x = Length - 1; x >= 0; x--)
-            for (int z = Width - 1; z >= 0; z--) {
+
+        for (int i = 0; i < Length; i++)
+            for (int j = 0; j < Width; j++) {
+                int x = (Length - 1 - i) + j;
+                int z = Width - 1 - j;
+                if (x >= Length || z >= Width) break;
+
                 Vector2 a = new Vector2(1 + xr[x, z + 1], 1 + zr[x, z + 1]);
                 Vector2 b = new Vector2(1 + xr[x + 1, z], 1 + zr[x + 1, z]);
                 Vector2 c = new Vector2(xr[x, z], zr[x, z]);

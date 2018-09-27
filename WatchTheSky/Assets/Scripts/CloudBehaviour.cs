@@ -8,14 +8,18 @@ public class CloudBehaviour : MonoBehaviour {
     public float MovingSpeedMax = 6.0f;
 
     public float Mass = 20.0f;
+    public float InitialSpeed = 4;
 
     float movingSpeed;
     bool floating;
     public bool Floating { get { return floating; } }
+    float lastHighlightTime;
+    public bool Highlighting { get { return Time.time - lastHighlightTime <= 0.1; } }
 
     void Start () {
         movingSpeed = Mathf.Lerp(MovingSpeedMin, MovingSpeedMax, Random.value);
         floating = true;
+        lastHighlightTime = -999;
     }
 	
 	void Update () {
@@ -32,5 +36,11 @@ public class CloudBehaviour : MonoBehaviour {
         floating = false;
         Rigidbody rb = gameObject.AddComponent<Rigidbody>();
         rb.mass = Mass;
+        rb.velocity = new Vector3(0, -InitialSpeed, 0);
+        transform.localScale *= 2;
+    }
+
+    public void HighLight() {
+        lastHighlightTime = Time.time;
     }
 }
