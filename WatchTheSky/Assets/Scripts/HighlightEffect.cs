@@ -53,16 +53,21 @@ public class HighlightEffect : MonoBehaviour {
         renderBuffer.Clear();
         RenderHighlights();
 
-        RenderTexture rt = RenderTexture.GetTemporary(Screen.width, Screen.height, 0);
-        Graphics.Blit(highlightRT, rt, GaussianMaterial);
+        RenderTexture rt1 = RenderTexture.GetTemporary(Screen.width, Screen.height, 0);
+        RenderTexture rt2 = RenderTexture.GetTemporary(Screen.width, Screen.height, 0);
+        Graphics.Blit(highlightRT, rt1, GaussianMaterial, 0);
+        Graphics.Blit(rt1, rt2, GaussianMaterial, 1);
+        Graphics.Blit(rt2, rt1, GaussianMaterial, 0);
+        Graphics.Blit(rt1, rt2, GaussianMaterial, 1);
 
         // Excluding the original image from the blurred image, leaving out the areal alone
-        //HighlightMaterial.SetTexture("_OccludeMap", highlightRT);
-        //Graphics.Blit(rt, rt, HighlightMaterial, 0);
+        HighlightMaterial.SetTexture("_OccludeMap", highlightRT);
+        Graphics.Blit(rt2, rt1, HighlightMaterial, 0);
         // Just combining two textures together
-        HighlightMaterial.SetTexture("_OccludeMap", rt);
+        HighlightMaterial.SetTexture("_OccludeMap", rt1);
         Graphics.Blit(source, destination, HighlightMaterial, 1);
 
-        RenderTexture.ReleaseTemporary(rt);
+        RenderTexture.ReleaseTemporary(rt1);
+        RenderTexture.ReleaseTemporary(rt2);
     }
 }

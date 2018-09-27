@@ -93,7 +93,6 @@ Shader "Custom/GaussianBlur" {
         #pragma fragment fragBlurSGX  
         ENDCG  
         }     
-          
   
     Pass {        
         ZTest Always  

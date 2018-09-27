@@ -733,7 +733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Soldier: {fileID: 1480635256156130, guid: 019ad09666e35fc46b51e463088a8bb9, type: 2}
   Player: {fileID: 1573859700}
-  MaxCount: 25
+  MaxCount: 0
   GenerateCycleTime: 2
   MaxRadius: 70
   NoGenInPlayerRadius: 20
@@ -954,7 +954,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400126, guid: 0ec3e49f5e1cf7e44adfda17a5862bee, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 400126, guid: 0ec3e49f5e1cf7e44adfda17a5862bee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -3464,7 +3464,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400126, guid: 0ec3e49f5e1cf7e44adfda17a5862bee, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 400126, guid: 0ec3e49f5e1cf7e44adfda17a5862bee, type: 3}
       propertyPath: m_LocalScale.x

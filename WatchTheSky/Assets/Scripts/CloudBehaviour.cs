@@ -19,7 +19,7 @@ public class CloudBehaviour : MonoBehaviour {
     void Start () {
         movingSpeed = Mathf.Lerp(MovingSpeedMin, MovingSpeedMax, Random.value);
         floating = true;
-        lastHighlightTime = -999;
+        lastHighlightTime = float.MinValue;
     }
 	
 	void Update () {
@@ -34,6 +34,7 @@ public class CloudBehaviour : MonoBehaviour {
 
     public void Drop() {
         floating = false;
+        lastHighlightTime = float.MinValue;
         Rigidbody rb = gameObject.AddComponent<Rigidbody>();
         rb.mass = Mass;
         rb.velocity = new Vector3(0, -InitialSpeed, 0);

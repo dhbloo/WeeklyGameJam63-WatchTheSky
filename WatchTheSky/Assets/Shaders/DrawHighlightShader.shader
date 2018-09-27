@@ -2,7 +2,7 @@
 {
 	Properties
 	{
-		_Color ("Highlight Color", Color) = (1, 1, 1, 1)
+		_Color ("Highlight Color", Color) = (1, 1, 1)
 	}
 	SubShader
 	{
