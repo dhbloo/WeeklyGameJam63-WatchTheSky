@@ -6,6 +6,7 @@ TagManager:
   tags:
   - cloud
   - soldier
+  - terrain
   layers:
   - Default
   - TransparentFX

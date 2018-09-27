@@ -28,14 +28,11 @@ To join [WeeklyGameJam63 "Watch The Sky"](https://itch.io/jam/weekly-game-jam-63
 
 ## 美术需求
 
-- [ ] 魔法阵
-
 低模。
 
 低多边形模型。
 
 - [x] 地图四周的山峰
-- [ ] 树
 - [x] 石头
 - [x] 士兵
 - [x] 云朵
@@ -52,19 +49,24 @@ To join [WeeklyGameJam63 "Watch The Sky"](https://itch.io/jam/weekly-game-jam-63
 
 - [x] 相机控制
     - [x] 旋转视角
-- [ ] 角色控制
+- [x] 角色控制
     - [x] 移动
-    - [ ] 石化云朵
+    - [x] 石化云朵
     - [x] 碰怪死亡
 - [x] 地形生成
-- [ ] 敌人生成
+- [x] 敌人生成
 - [ ] 敌人ai
-    - [ ] 移动
+    - [x] 移动
     - [ ] 被砸消失
 - [x] 云朵生成
 - [ ] 云朵ai
     - [x] 移动
     - [ ] 掉落消失
-- [ ] 游戏流程控制
+- [x] 游戏流程控制
 
+## 音乐与音效
+
+- [ ] 游戏背景音
+- [ ] 石化音效
+- [ ] 云朵落地音效
 
