@@ -6,9 +6,10 @@ public class CloudGenerator : MonoBehaviour {
 
     public GameObject CloudObject;
     public int TargetCloudCount = 15;
-    public float GenRadius = 100f;
+    public float GenRadiusMin = 70f;
+    public float GenRadiusMax = 120f;
 
-	void Start () {
+    void Start () {
     }
 	
 	void Update () {
@@ -16,7 +17,8 @@ public class CloudGenerator : MonoBehaviour {
         if (childCount < TargetCloudCount) {
             float rndAngle = Random.value * Mathf.PI * 2;
             float rndRotateAngle = Random.value * 360;
-            Vector3 spawnPos = new Vector3(Mathf.Cos(rndAngle) * GenRadius, 0, Mathf.Sin(rndAngle) * GenRadius);
+            float rndRadius = Mathf.Lerp(GenRadiusMin, GenRadiusMax, Random.value);
+            Vector3 spawnPos = new Vector3(Mathf.Cos(rndAngle) * rndRadius, 0, Mathf.Sin(rndAngle) * rndRadius);
 
             GameObject newCloud = Instantiate(CloudObject, transform);
             newCloud.transform.localPosition = spawnPos;
