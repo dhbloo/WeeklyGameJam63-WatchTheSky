@@ -73,8 +73,8 @@ To join [WeeklyGameJam63 "Watch The Sky"](https://itch.io/jam/weekly-game-jam-63
 
 ## 截图
 
-[](ScreenShot1.png)
+[](https://github.com/dhblooo/WeeklyGameJam63-WatchTheSky/raw/master/ScreenShot1.png)
 
-[](ScreenShot2.png)
+[](https://github.com/dhblooo/WeeklyGameJam63-WatchTheSky/raw/master/ScreenShot2.png)
 
-[](ScreenShot3.png)
+[](https://github.com/dhblooo/WeeklyGameJam63-WatchTheSky/raw/master/ScreenShot3.png)
