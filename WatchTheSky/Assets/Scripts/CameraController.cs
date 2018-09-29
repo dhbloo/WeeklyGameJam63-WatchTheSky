@@ -40,7 +40,7 @@ public class CameraController : MonoBehaviour
 
 }
 
-[CustomEditor(typeof(CameraController))]
+/*[CustomEditor(typeof(CameraController))]
 public class CameraControllerEditor : Editor
 {
     public override void OnInspectorGUI()
@@ -49,4 +49,4 @@ public class CameraControllerEditor : Editor
         
         GUILayout.TextArea("Info : Open 'Edit->Project Settings->Input' to adjust sensitivity of MouseX and MouseY");
     }
-}
+}*/

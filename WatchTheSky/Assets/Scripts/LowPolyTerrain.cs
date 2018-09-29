@@ -128,7 +128,7 @@ public class LowPolyTerrain : MonoBehaviour {
 }
 
 
-[CustomEditor(typeof(LowPolyTerrain))]
+/*[CustomEditor(typeof(LowPolyTerrain))]
 public class ObjectBuilderEditor : Editor {
     public override void OnInspectorGUI() {
         DrawDefaultInspector();
@@ -136,4 +136,4 @@ public class ObjectBuilderEditor : Editor {
         if (GUILayout.Button("ReBuild Terrain"))
             (target as LowPolyTerrain).RebuildMesh();
     }
-}
+}*/
