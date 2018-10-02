@@ -59,22 +59,22 @@ To join [WeeklyGameJam63 "Watch The Sky"](https://itch.io/jam/weekly-game-jam-63
     - [x] 移动
     - [x] 被砸消失
 - [x] 云朵生成
-- [ ] 云朵ai
+- [x] 云朵ai
     - [x] 移动
-    - [ ] 掉落消失
-    - [ ] 选中高亮
+    - [x] 掉落消失
+    - [x] 选中高亮
 - [x] 游戏流程控制
 
 ## 音乐与音效
 
-- [ ] 游戏背景音
-- [ ] 石化音效
-- [ ] 云朵落地音效
+- [x] 游戏背景音
+- [x] 石化音效
+- [x] 云朵落地音效
 
 ## 截图
 
-[](https://github.com/dhblooo/WeeklyGameJam63-WatchTheSky/raw/master/ScreenShot1.png)
+![](ScreenShot1.png)
 
-[](https://github.com/dhblooo/WeeklyGameJam63-WatchTheSky/raw/master/ScreenShot2.png)
+![](ScreenShot2.png)
 
-[](https://github.com/dhblooo/WeeklyGameJam63-WatchTheSky/raw/master/ScreenShot3.png)
+![](ScreenShot3.png)
